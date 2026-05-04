@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Practice Activities</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #5a7fa8;
+      --text-dark: #222;
+      --text-light: #555;
+      --bg-light: #f5f7fa;
+      --white: #ffffff;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --radius: 14px;
+      --transition: 0.25s ease;
+      --max-width: 900px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #ddd;
+      padding: 14px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 60px auto;
+      background: var(--white);
+      padding: 45px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .list a {
+      display: block;
+      background: var(--accent);
+      color: white;
+      padding: 14px;
+      margin: 12px 0;
+      border-radius: 8px;
+      text-decoration: none;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .list a:hover {
+      background: #4a6b8f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">Maryam’s Portfolio</div>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html">Practice Activities</a></li>
+      <li><a href="../partnerlab1/index.html">Partner Labs</a></li>
+      <li><a href="../individual1/index.html">Individual Assignments</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Practice Activities</h1>
+
+    <div class="list">
+      <a href="../practice1/index.html">Practice Activity 1</a>
+      <a href="../practice2/index.html">Practice Activity 2</a>
+      <a href="../practice3/index.html">Practice Activity 3</a>
+    </div>
+  </div>
+
+</body>
+</html>
