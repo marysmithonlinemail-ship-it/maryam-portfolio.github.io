@@ -216,9 +216,10 @@
 
     <a href="explore/index.html" class="button">Start Exploring</a>
 
-    <button onclick="toggleDarkMode()" class="button" style="margin-top:20px;">
+    <button id="modeButton" onclick="toggleDarkMode()" class="button" style="margin-top:20px;">
       Turn on Dark Mode
     </button>
+
 
   </div>
 
@@ -250,6 +251,32 @@
         localStorage.setItem("darkMode", "disabled");
       }
     }
+    function updateButtonText() {
+    const btn = document.getElementById("modeButton");
+    if (document.body.classList.contains("dark-mode")) {
+      btn.textContent = "Turn off Dark Mode";
+    } else {
+      btn.textContent = "Turn on Dark Mode";
+    }
+  }
+
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+  }
+
+  updateButtonText();
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("darkMode", "enabled");
+    } else {
+      localStorage.setItem("darkMode", "disabled");
+    }
+
+    updateButtonText();
+  }
   </script>
 
 </body>
