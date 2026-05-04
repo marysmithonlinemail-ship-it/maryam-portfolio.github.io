@@ -68,20 +68,20 @@
       margin-bottom: 20px;
     }
 
-    .activity-list {
-      margin-top: 30px;
-    }
-
-    .activity-item {
-      background: #e7edf5;
-      padding: 18px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      font-weight: 500;
+    .list a {
+      display: block;
+      background: #5a7fa8;
+      color: white;
+      padding: 14px;
+      margin: 12px 0;
+      border-radius: 8px;
+      text-decoration: none;
+      text-align: center;
       transition: 0.25s ease;
     }
 
-    .activity-item:hover {
+    .list a:hover {
+      background: #4a6b8f;
       transform: scale(1.03);
     }
 
@@ -133,10 +133,10 @@
   <div class="container">
     <h1>Practice Activities</h1>
 
-    <div class="activity-list">
-      <div class="activity-item"><a href="practice1/index.html">Practice Activity 1</a></div>
-      <div class="activity-item"><a href="practice2/index.html">Practice Activity 2</a></div>
-      <div class="activity-item"><a href="practice3/index.html">Practice Activity 3</a></div>
+    <div class="list">
+      <div><a href="practice1/index.html">Practice Activity 1</a></div>
+      <div><a href="practice2/index.html">Practice Activity 2</a></div>
+      <div><a href="practice3/index.html">Practice Activity 3</a></div>
     </div>
 
     <button onclick="toggleDarkMode()" class="btn" style="
