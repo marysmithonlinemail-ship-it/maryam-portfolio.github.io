@@ -25,22 +25,22 @@
       box-shadow:0 4px 20px rgba(0,0,0,0.1);
       position:relative;
     }
-
-    /* Required positioning */
     #contact-box label {
       position:relative;
       left:2px;
     }
+    
+    #contact-box button:hover {
+      transform: scale(1.05);
+      transition: 0.25s ease;
+    }
 
-    /* ⭐ REQUIRED MEDIA QUERY (Requirement #9) */
     @media (max-width: 600px) {
       #contact-box {
         margin:20px;
         padding:25px;
       }
     }
-
-    /* Dark mode support */
     .dark-mode {
       background:#1e1e1e;
       color:white;
