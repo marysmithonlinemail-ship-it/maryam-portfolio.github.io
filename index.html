@@ -31,7 +31,7 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
-    /* ⭐ DARK MODE CSS */
+  
     .dark-mode {
       background:#1e1e1e;
       color:white;
@@ -50,6 +50,18 @@
     .dark-mode a.button {
       background:#777;
     }
+    .dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode .flex-item,
+.dark-mode #highlight-box {
+  color: white;
+}
+
+.dark-mode a.button {
+  color: black;
+  background: #ddd;
+}
 
     :root {
       --accent: #5a7fa8;
@@ -197,18 +209,6 @@
     <button onclick="toggleDarkMode()" class="button" style="margin-top:20px;">
       Toggle Dark Mode
     </button>
-    .dark-mode p,
-.dark-mode h1,
-.dark-mode h2,
-.dark-mode .flex-item,
-.dark-mode #highlight-box {
-  color: white;
-}
-
-.dark-mode a.button {
-  color: black;
-  background: #ddd;
-}
 
 
   </div>
