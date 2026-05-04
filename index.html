@@ -150,12 +150,12 @@
       transform: scale(1.05);
     }
 
-    @media (max-width: 700px) {
-      .flex-box {
-        flex-direction: column;
-      }
-    }
-  </style>
+   @media (max-width: 700px) {
+  .flex-box {
+    flex-direction: column;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -197,6 +197,19 @@
     <button onclick="toggleDarkMode()" class="button" style="margin-top:20px;">
       Toggle Dark Mode
     </button>
+    .dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode .flex-item,
+.dark-mode #highlight-box {
+  color: white;
+}
+
+.dark-mode a.button {
+  color: black;
+  background: #ddd;
+}
+
 
   </div>
 
