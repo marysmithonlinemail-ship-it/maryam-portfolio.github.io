@@ -3,43 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Practice Activities</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --accent: #5a7fa8;
-      --text-dark: #222;
-      --text-light: #555;
-      --bg-light: #f5f7fa;
-      --white: #ffffff;
-      --shadow: 0 4px 20px rgba(0,0,0,0.08);
-      --radius: 14px;
-      --transition: 0.25s ease;
-      --max-width: 900px;
-    }
-
     body {
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      background: var(--bg-light);
-      color: var(--text-dark);
+      background: #f5f7fa;
+      color: #222;
     }
 
     nav {
-      background: var(--white);
+      background: white;
       border-bottom: 1px solid #ddd;
       padding: 14px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav .logo {
       font-weight: 600;
       font-size: 20px;
-      color: var(--accent);
+      color: #5a7fa8;
     }
 
     nav ul {
@@ -52,43 +44,75 @@
 
     nav ul li a {
       text-decoration: none;
-      color: var(--text-dark);
+      color: #222;
       font-weight: 500;
-      transition: var(--transition);
+      transition: 0.25s ease;
     }
 
     nav ul li a:hover {
-      color: var(--accent);
+      color: #5a7fa8;
     }
 
     .container {
-      max-width: var(--max-width);
+      max-width: 900px;
       margin: 60px auto;
-      background: var(--white);
+      background: white;
       padding: 45px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 30px;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
 
-    .list a {
-      display: block;
-      background: var(--accent);
+    .activity-list {
+      margin-top: 30px;
+    }
+
+    .activity-item {
+      background: #e7edf5;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      font-weight: 500;
+      transition: 0.25s ease;
+    }
+
+    .activity-item:hover {
+      transform: scale(1.03);
+    }
+
+    .dark-mode {
+      background: #1e1e1e;
       color: white;
-      padding: 14px;
-      margin: 12px 0;
-      border-radius: 8px;
-      text-decoration: none;
-      text-align: center;
-      transition: var(--transition);
     }
 
-    .list a:hover {
-      background: #4a6b8f;
+    .dark-mode .container {
+      background: #2a2a2a;
+      color: white;
+    }
+
+    .dark-mode nav {
+      background: #333;
+      border-bottom: 1px solid #555;
+    }
+
+    .dark-mode nav ul li a {
+      color: white;
+    }
+
+    .dark-mode .activity-item {
+      background: #d9e3f2;
+      color: black;
+    }
+
+    @media (max-width: 700px) {
+      .activity-item {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
@@ -100,38 +124,55 @@
     <ul>
       <li><a href="../index.html">Home</a></li>
       <li><a href="index.html">Practice Activities</a></li>
-      <li><a href="../partnerlab1/index.html">Partner Labs</a></li>
-      <li><a href="../individual1/index.html">Individual Assignments</a></li>
+      <li><a href="../partnerlab/index.html">Partner Labs</a></li>
+      <li><a href="../individual/index.html">Individual Assignments</a></li>
+      <li><a href="../contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <div class="container">
     <h1>Practice Activities</h1>
 
-    <div class="list">
-      <a href="../practice1/index.html">Practice Activity 1</a>
-      <a href="../practice2/index.html">Practice Activity 2</a>
-      <a href="../practice3/index.html">Practice Activity 3</a>
+    <div class="activity-list">
+      <div class="activity-item"><a href="practice1.html">Practice Activity 1</a></div>
+      <div class="activity-item"><a href="practice2.html">Practice Activity 2</a></div>
+      <div class="activity-item"><a href="practice3.html">Practice Activity 3</a></div>
     </div>
+
+    <button onclick="toggleDarkMode()" class="btn" style="
+      margin-top:25px;
+      padding:12px 18px;
+      background:#5a7fa8;
+      color:white;
+      border:none;
+      border-radius:6px;
+      cursor:pointer;">
+      Toggle Dark Mode
+    </button>
+
   </div>
-<footer style="
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  background:#5a7fa8;
-  color:white;
-  text-align:center;
-  padding:10px 0;
-  font-size:14px;">
-  © 2026 Maryam Mahassen — Final Project
-</footer>
-<script>
+
+  <footer style="
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#5a7fa8;
+    color:white;
+    text-align:center;
+    padding:10px 0;
+    font-size:14px;">
+    © 2026 Maryam Mahassen — Final Project
+  </footer>
+
+  <script>
     if (localStorage.getItem("darkMode") === "enabled") {
       document.body.classList.add("dark-mode");
     }
+
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
+
       if (document.body.classList.contains("dark-mode")) {
         localStorage.setItem("darkMode", "enabled");
       } else {
@@ -139,46 +180,6 @@
       }
     }
   </script>
-  <style>
-    .dark-mode {
-      background:#1e1e1e;
-      color:white;
-    }
-    
-    .dark-mode .container {
-      background:#2a2a2a;
-      color:white;
-    }
-    
-    .dark-mode nav {
-      background:#333;
-      border-bottom:1px solid #555;
-    }
-    
-    .dark-mode a.button {
-      background:#777;
-    }
-    
-    .dark-mode p,
-    .dark-mode h1,
-    .dark-mode h2 {
-      color: white;
-    }
-    
-    .dark-mode a.button {
-      color: black;
-      background: #ddd;
-    }
-    
-    .dark-mode .flex-item {
-      color: black !important;
-      background: #d9e3f2;
-    }
-    
-    .dark-mode #highlight-box {
-      color: black !important;
-      background:#e8f0ff;
-    }
-  </style>
+
 </body>
 </html>
