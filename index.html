@@ -4,89 +4,157 @@
   <meta charset="UTF-8">
   <title>Maryam’s Web Development Portfolio</title>
 
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 
   <style>
+    :root {
+      --accent: #5a7fa8;
+      --accent-light: #e7edf5;
+      --text-dark: #222;
+      --text-light: #555;
+      --bg-light: #f5f7fa;
+      --white: #ffffff;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --transition: 0.25s ease;
+      --radius: 14px;
+      --max-width: 900px;
+    }
+
     body {
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom right, #eef2f3, #ffffff);
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #ddd;
+      padding: 14px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
     }
 
     .container {
-      max-width: 700px;
+      max-width: var(--max-width);
       margin: 60px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 14px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      background: var(--white);
+      padding: 45px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     h1 {
       text-align: center;
       font-weight: 600;
-      margin-bottom: 10px;
-      color: #222;
+      margin-bottom: 20px;
+      color: var(--text-dark);
     }
 
     p {
-      text-align: center;
-      color: #555;
-      margin-bottom: 30px;
-      font-size: 15px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      margin: 12px 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: #1a1a1a;
+      color: var(--text-light);
+      line-height: 1.7;
       font-size: 16px;
-      padding: 12px 16px;
-      display: block;
-      border-radius: 8px;
-      transition: 0.2s ease;
-      border: 1px solid #e5e5e5;
-      background: #fafafa;
     }
 
-    a:hover {
-      background: #e9f0ff;
-      border-color: #bcd3ff;
-      color: #003d99;
+    a.button {
+      display: inline-block;
+      margin-top: 25px;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--accent);
+      padding: 12px 18px;
+      border-radius: 6px;
+      transition: var(--transition);
+    }
+
+    a.button:hover {
+      background: #4a6b8f;
+    }
+
+    footer {
+      background: var(--white);
+      border-top: 1px solid #ddd;
+      padding: 20px;
+      text-align: center;
+      color: var(--text-light);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 14px 20px;
+      }
+
+      nav ul {
+        gap: 16px;
+      }
+
+      .container {
+        padding: 30px;
+        margin: 30px 12px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>Maryam’s Web Development Portfolio</h1>
-    <p>Welcome to my portfolio. Below are links to all my web development projects.</p>
-
+  <nav>
+    <div class="logo">Maryam’s Portfolio</div>
     <ul>
-      <li><a href="practice1/index.html">Practice Activity 1</a></li>
-      <li><a href="practice2/index.html">Practice Activity 2</a></li>
-      <li><a href="practice3/index.html">Practice Activity 3</a></li>
-      <li><a href="partnerlab1/index.html">Partner Lab 1</a></li>
-      <li><a href="partnerlab2/index.html">Partner Lab 2</a></li>
-      <li><a href="individual1/index.html">Individual Assignment 1</a></li>
-      <li><a href="individual2/index.html">Individual Assignment 2</a></li>
-      <li><a href="individual3/index.html">Individual Assignment 3</a></li>
-      <li><a href="individual4/index.html">Individual Assignment 4 (Under Construction)</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="practice1/index.html">Practice Activities</a></li>
+      <li><a href="partnerlab1/index.html">Partner Labs</a></li>
+      <li><a href="individual1/index.html">Individual Assignments</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Welcome to My Web Development Portfolio</h1>
+    <p>
+      This website showcases all of my work from the semester, including practice activities,
+      partner labs, and individual assignments. Each page demonstrates different skills I’ve learned
+      in HTML, CSS, and JavaScript.
+    </p>
+
+    <a class="button" href="practice1/index.html">Start Exploring</a>
   </div>
+
+  <footer>
+    © 2026 Maryam Mahassen — Web Development Portfolio
+  </footer>
 
 </body>
 </html>
